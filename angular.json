@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "nqt-app"
+    }
+  },
+  "defaultProject": "nqt-app",
+  "cli": {
+    "analytics": false
+  }
 }

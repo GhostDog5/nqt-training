@@ -1,0 +1,6 @@
+<nqt-order-search
+  [criteria]="searchCriteria$ | async"
+  (criteriaChange)="updateUrlOnCriteria($event)">
+</nqt-order-search>
+<nqt-order-results
+  [orders]="results$ | async"></nqt-order-results>
