@@ -25,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     TranslateModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule {
 }

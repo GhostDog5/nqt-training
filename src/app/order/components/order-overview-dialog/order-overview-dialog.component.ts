@@ -28,6 +28,9 @@ export class OrderOverviewDialogComponent {
   }
 
   updateUrlOnCriteria(newCriteria: OrderSearch): Promise<boolean> {
-    return this.router.navigate([newCriteria], {relativeTo: this.route});
+    return this.router.navigate([newCriteria], {
+      relativeTo: this.route,
+      replaceUrl: true
+    });
   }
 }

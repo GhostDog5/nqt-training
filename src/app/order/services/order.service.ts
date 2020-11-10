@@ -15,8 +15,13 @@ export class OrderService {
   }
 
   getOne(id: number): Observable<Order> {
-    return this.http.get<OrderTo>(`rest/order/${id}`)
-      .pipe(map(fromTo));
+    // return this.http.get<OrderTo>(`rest/order/${id}`)
+    //   .pipe(map(fromTo));
+
+    return of({
+      creationDate: new Date(),
+      businessKey: `${id}-ABC`
+    });
   }
 
   search(criteria: OrderSearch): Observable<Order[]> {
