@@ -1,17 +1,19 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {SecurityService} from './security/security.service';
 import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 import {ReactiveFormsModule} from '@angular/forms';
+import {RadioButtonsComponent} from './forms/radio-buttons/radio-buttons.component';
+import {CounterInputComponent} from './forms/counter-input/counter-input.component';
+import { AppHeaderComponent } from './dialogs/app-header/app-header.component';
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [RadioButtonsComponent, CounterInputComponent, AppHeaderComponent],
   imports: [
     CommonModule, RouterModule, TranslateModule
   ],
-  exports: [CommonModule, RouterModule, TranslateModule, ReactiveFormsModule]
+  exports: [CommonModule, RouterModule, TranslateModule, ReactiveFormsModule, RadioButtonsComponent, CounterInputComponent, AppHeaderComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {

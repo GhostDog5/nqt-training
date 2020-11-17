@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
-import {OrderService} from '../../services/order.service';
 import {Order} from '../../model/order';
 
 @Component({
@@ -15,8 +14,13 @@ export class OrderDetailsDialogComponent {
 
   constructor(route: ActivatedRoute) {
     this.orderForm = new FormGroup({
-      businessKey: new FormControl(),
-      description: new FormControl()
+      businessKey: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5),
+        startsWith('ABC')
+      ]),
+      description: new FormControl(),
+      items: new FormControl(null, Validators.required)
     });
 
     const order = route.snapshot.data.order as Order | undefined;
@@ -24,4 +28,39 @@ export class OrderDetailsDialogComponent {
       this.orderForm.patchValue(order);
     }
   }
+
+  getErrors(control: AbstractControl): string[] {
+    const errors = (control && control.errors) || {};
+
+    return Object.keys(errors).map(errorCode => {
+      switch (errorCode) {
+        case 'required':
+          return 'Please provide a value';
+        case 'minlength': {
+          const errorMeta = errors[errorCode];
+          return `The value is too short (${errorMeta.requiredLength}/${errorMeta.actualLength})`;
+        }
+        default:
+          return 'Unknown error';
+      }
+    });
+  }
 }
+
+
+function startsWith(prefix: string): ValidatorFn {
+  // tslint:disable-next-line:only-arrow-functions
+  return function(control: AbstractControl): ValidationErrors | null {
+    const value = control?.value;
+    if (value) {
+      if (!value.startsWith(prefix)) {
+        return {
+          startsWithAbc: false
+        };
+      }
+    }
+    return null;
+  };
+}
+
+

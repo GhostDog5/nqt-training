@@ -8,6 +8,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import {orderRoutes} from './order/order.routes';
 import {OrderModule} from './order/order.module';
 import {HttpClientModule} from '@angular/common/http';
+import {QuotationModule} from './quotation/quotation.module';
+import {quotationRoutes} from './quotation/quotation.routes';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    QuotationModule.forRoot(),
     OrderModule.forRoot(),
     HttpClientModule,
     SharedModule.forRoot(),
     RouterModule.forRoot([
-      {path: '', pathMatch: 'full', redirectTo: '/orders'},
+      {path: '', pathMatch: 'full', redirectTo: '/quotation'},
+      ...quotationRoutes,
       ...orderRoutes
     ]),
     TranslateModule.forRoot()

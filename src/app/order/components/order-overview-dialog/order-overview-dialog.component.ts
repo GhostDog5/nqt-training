@@ -17,10 +17,13 @@ export class OrderOverviewDialogComponent {
   constructor(private readonly route: ActivatedRoute,
               private readonly router: Router,
               private readonly orders: OrderService) {
-    this.searchCriteria$ = route.params.pipe(
-      pluck('businessKey'),
-      map(businessKey => ({businessKey}))
-    );
+    this.searchCriteria$ = route.params
+      .pipe(
+        pluck('businessKey'),
+        map(
+          businessKey => ({businessKey})
+        ) // {businessKey: 'abc'}
+      );
 
     this.results$ = this.searchCriteria$.pipe(
       switchMap(orderSearch => this.orders.search(orderSearch))

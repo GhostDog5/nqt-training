@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'nqt-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: []
+  providers: [],
 })
 export class AppComponent {
 }

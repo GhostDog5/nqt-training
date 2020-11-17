@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrderResultsComponent } from './order-results.component';
+import { WizardStepComponent } from './wizard-step.component';
 
-describe('OrderResultsComponent', () => {
-  let component: OrderResultsComponent;
-  let fixture: ComponentFixture<OrderResultsComponent>;
+describe('WizardStepComponent', () => {
+  let component: WizardStepComponent;
+  let fixture: ComponentFixture<WizardStepComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderResultsComponent ]
+      declarations: [ WizardStepComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrderResultsComponent);
+    fixture = TestBed.createComponent(WizardStepComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

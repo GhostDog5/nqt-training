@@ -1,0 +1,14 @@
+<nqt-quotation-details-dialog-header
+  [quotation]="quotation"></nqt-quotation-details-dialog-header>
+<section>
+  <nqt-wizard-step
+    [step]="{label: '1', title: 'Customer Data'}"
+    [active]="active">
+    <nqt-customer-data
+      [quotation]="quotation"></nqt-customer-data>
+    <nqt-customer-data-overview
+      [quotation]="quotation" overview></nqt-customer-data-overview>
+  </nqt-wizard-step>
+</section>
+
+<button (click)="toggle()">Toggle</button>

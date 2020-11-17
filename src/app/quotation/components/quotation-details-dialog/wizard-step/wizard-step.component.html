@@ -1,0 +1,6 @@
+<section class="step">{{step.label}}</section>
+<section class="main">
+  <header>{{step.title}}</header>
+  <ng-content *ngIf="active"></ng-content>
+  <ng-content *ngIf="!active" select="[overview]"></ng-content>
+</section>

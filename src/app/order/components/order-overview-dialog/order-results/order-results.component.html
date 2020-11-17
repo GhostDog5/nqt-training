@@ -1,4 +1,4 @@
 <ul>
   <li *ngFor="let order of orders">{{order.businessKey}},
-    {{order.creationDate.toISOString()}}</li>
+    {{order.creationDate.toISOString()}}<a [routerLink]="['/order', order.id]">Go to Details</a></li>
 </ul>

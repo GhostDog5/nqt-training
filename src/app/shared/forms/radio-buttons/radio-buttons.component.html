@@ -1,0 +1,6 @@
+{{value}}
+<label *ngFor="let radioButton of config">
+  <input type="radio" name="group"
+         [checked]="value === radioButton.value"
+         (change)="setNewValue(radioButton.value)">{{radioButton.label}}
+</label>

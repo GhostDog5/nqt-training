@@ -1,3 +1,24 @@
 <form [formGroup]="orderForm">
-  <input formControlName="businessKey">
+  <label for="businessKey">Business key:</label>
+  <input id="businessKey" formControlName="businessKey">
+  <span>{{getErrors(orderForm.get('businessKey'))}}</span>
+
+  <label for="description">Description:</label>
+  <input id="description" formControlName="description">
+  <span>{{getErrors(orderForm.get('description'))}}</span>
+
+
+  <label for="items">Items:</label>
+  <nqt-counter-input id="items" formControlName="items"></nqt-counter-input>
+  <span>{{getErrors(orderForm.get('items'))}}</span>
 </form>
+
+value: {{ orderForm.get('items').value | json}}
+<br>
+touched: {{ orderForm.get('items').touched | json}}
+<br>
+dirty: {{ orderForm.get('items').dirty | json}}
+<br>
+valid: {{ orderForm.get('items').valid | json}}
+<br>
+errors: {{ orderForm.get('items').errors | json}}

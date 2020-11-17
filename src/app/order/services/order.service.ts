@@ -1,10 +1,11 @@
 import {Observable, of} from 'rxjs';
 import {Order, OrderSearch} from '../model/order';
 import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
+import {delay} from 'rxjs/operators';
 
 interface OrderTo {
+  id: number;
   businessKey: string;
   creationDate: string;
 }
@@ -19,9 +20,10 @@ export class OrderService {
     //   .pipe(map(fromTo));
 
     return of({
+      id,
       creationDate: new Date(),
       businessKey: `${id}-ABC`
-    });
+    }).pipe(delay(2000));
   }
 
   search(criteria: OrderSearch): Observable<Order[]> {
@@ -36,6 +38,7 @@ export class OrderService {
     //   );
     //
     return of([{
+      id: 1234,
       businessKey: 'ABC1234',
       creationDate: new Date()
     }]);
