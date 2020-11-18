@@ -1,4 +1,7 @@
-<nav>Back to Dashboard</nav>
+<nav>
+  <!-- <a [routerLink]="['/quotation']">Back to Dashboard</a> -->
+  <button (click)="notifyOnBackToDashboard()" backToDashboardButton>Back to Dashboard</button>
+</nav>
 <section>
   <nqt-quotation-general-info [quotation]="quotation"></nqt-quotation-general-info>
   <button (click)="notifyOnSaveClick()" saveQuotationButton>Save Quotation</button>

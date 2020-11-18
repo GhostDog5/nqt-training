@@ -13,7 +13,14 @@ export class QuotationDetailsDialogHeaderComponent {
   @Output()
   saveClick = new EventEmitter<void>();
 
+  @Output()
+  backToDashboardClick = new EventEmitter<void>();
+
   notifyOnSaveClick(): void {
     this.saveClick.emit();
+  }
+
+  notifyOnBackToDashboard(): void {
+    this.backToDashboardClick.emit();
   }
 }

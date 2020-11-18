@@ -4,42 +4,79 @@ import { QuotationService } from 'src/app/quotation/services/quotation.service';
 import { QuotationDetailsDialogHeaderComponent } from './quotation-details-dialog-header.component';
 
 describe('QuotationDetailsDialogHeaderComponent', () => {
-  let component: QuotationDetailsDialogHeaderComponent;
-  let fixture: ComponentFixture<QuotationDetailsDialogHeaderComponent>;
-  let element: HTMLElement;
-  let quotationServiceMock;
 
-  beforeEach(
-    async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ QuotationDetailsDialogHeaderComponent ],
-      providers: [{provide: QuotationService, useValue: quotationServiceMock}]
-    })
-    .compileComponents();
-  });
+  describe('(Class tests)', () => {
+    it('notifies on Save Quotation', () => {
+      // given: component
+      const component = new QuotationDetailsDialogHeaderComponent();
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(QuotationDetailsDialogHeaderComponent);
-    component = fixture.componentInstance;
-    element = fixture.nativeElement as HTMLElement;
-    quotationServiceMock = jasmine.createSpyObj(['saveQuotation', 'createQuotation']);
-    fixture.detectChanges();
-  });
+      // then:
+      component.saveClick.subscribe(buttonPressed => {
+          expect(true).toBeTruthy();
+      });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should call service on Save Quotation clicked', () => {
-    // given: save button
-    const saveQuotationButton = element.querySelector<HTMLInputElement>('[saveQuotationButton]');
-
-    component.saveClick.subscribe(saveClicked => {
-      // then: service called
-      expect(quotationServiceMock.createQuotation).toHaveBeenCalled();
+      // when: event fired
+      component.notifyOnSaveClick();
     });
 
-    // when: save button clicked
-    saveQuotationButton.click();
+    it('notifies on Back to Dashboard', () => {
+      // given: component
+      const component = new QuotationDetailsDialogHeaderComponent();
+
+      // then:
+      component.backToDashboardClick.subscribe(buttonPressed => {
+          expect(true).toBeTruthy();
+      });
+
+      // when: event fired
+      component.notifyOnBackToDashboard();
+    });
+  });
+
+  describe('(DOM tests)', () => {
+    let component: QuotationDetailsDialogHeaderComponent;
+    let fixture: ComponentFixture<QuotationDetailsDialogHeaderComponent>;
+    let element: HTMLElement;
+
+    beforeEach(() => {
+      return TestBed.configureTestingModule({
+        declarations: [ QuotationDetailsDialogHeaderComponent ]
+      }).compileComponents();
+    });
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(QuotationDetailsDialogHeaderComponent);
+      component = fixture.componentInstance;
+      element = fixture.nativeElement as HTMLElement;
+      fixture.detectChanges();
+    });
+
+    it('notifies on Save Quotation', () => {
+      // given: save button
+      fixture.detectChanges();
+      const saveQuotationButton = element.querySelector<HTMLInputElement>('[saveQuotationButton]');
+
+      component.saveClick.subscribe(saveClicked => {
+        // then:
+        expect(true).toBeTruthy();
+      });
+
+      // when: save button clicked
+      saveQuotationButton.click();
+    });
+
+    it('notifies on Back to Dashbord', () => {
+      // given: Back to Dashbord button
+      fixture.detectChanges();
+      const backToDashboardButton = element.querySelector<HTMLInputElement>('[backToDashboardButton]');
+
+      component.backToDashboardClick.subscribe(backToDashboardClicked => {
+        // then:
+        expect(true).toBeTruthy();
+      });
+
+      // when: Back to Dashbord button clicked
+      backToDashboardButton.click();
+    });
   });
 });
