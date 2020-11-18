@@ -1,4 +1,21 @@
+$height: 48px;
+$border: 2px;
+$color: #3BB0BB;
+
 :host {
   display: flex;
   flex-direction: row;
+  min-height: $height;
 }
+.stepper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.line {
+  height: 100%;
+  width: $border;
+  background-color: $color;
+}
+

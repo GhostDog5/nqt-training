@@ -1,6 +1,9 @@
-<section class="step">{{step.label}}</section>
-<section class="main">
-  <header>{{step.title}}</header>
-  <ng-content *ngIf="active"></ng-content>
-  <ng-content *ngIf="!active" select="[overview]"></ng-content>
-</section>
+  <div class="stepper">
+    <nqt-step-circle [label]="step.label"></nqt-step-circle>
+    <div class="line"></div>
+  </div>
+  <div class="main">
+    <header>{{step.title}}</header>
+    <ng-content *ngIf="active"></ng-content>
+    <ng-content *ngIf="!active" select="[overview]"></ng-content>
+  </div>

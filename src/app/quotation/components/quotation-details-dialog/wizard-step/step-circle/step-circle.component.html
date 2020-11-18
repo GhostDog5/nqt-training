@@ -1,5 +1,6 @@
-<div class="outerCircle">
+<div class="circle">
     <div class="innerCircle">
-      <span>{{label}}</span>
+        <div *ngIf="label">{{label}}</div>
+        <div *ngIf="!label">ok</div>
     </div>
 </div>
