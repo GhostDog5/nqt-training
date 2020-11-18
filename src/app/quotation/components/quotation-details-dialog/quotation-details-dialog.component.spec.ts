@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { QuotationService } from '../../services/quotation.service';
 
 import { QuotationDetailsDialogComponent } from './quotation-details-dialog.component';
 
@@ -9,7 +10,8 @@ describe('QuotationDetailsDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuotationDetailsDialogComponent ]
+      declarations: [ QuotationDetailsDialogComponent ],
+      providers: [{provide: QuotationService, useValue: quotationServiceMock}],
     })
     .compileComponents();
   });
@@ -23,14 +25,6 @@ describe('QuotationDetailsDialogComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should call service to create new quotation', () => {
-    // TODO: implement test
-  });
-
-  it('should call service to save quotation for existing quotation', () => {
-    // TODO: implement test
   });
 
 });
