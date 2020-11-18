@@ -14,7 +14,7 @@ describe('OrderSearchComponent', () => {
   describe('(class tests)', () => {
     it('populates input value to the form', () => {
       // given
-      const component = new OrderSearchComponent(orderServiceMock);
+      const component = new OrderSearchComponent();
       // when
       component.criteria = {businessKey: 'TestBK'};
       // then
@@ -23,7 +23,7 @@ describe('OrderSearchComponent', () => {
 
     it('notifies on criteria change', () => {
       // given
-      const component = new OrderSearchComponent(orderServiceMock);
+      const component = new OrderSearchComponent();
       component.criteria = {businessKey: 'TestBK'};
       component.criteriaChange.subscribe(updatedCriteria => {
         // then

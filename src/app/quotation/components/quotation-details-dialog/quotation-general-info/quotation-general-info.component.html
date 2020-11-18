@@ -1,1 +1,11 @@
-General info goes here... {{quotation.status}}
+<svg ibmIconPlane size="32" class="quotation-transport-mode"></svg>
+<span class="quotation-id quotation-id-date-properties">{{
+  getQuotationId()
+}}</span>
+<span class="quotation-creation-date quotation-id-date-properties">{{
+  getFormattedDate()
+}}</span>
+<div class="quotation-status">
+  <svg ibmIconInformationFilled size="32" class="quotation-status-info"></svg>
+  <span class="quotation-status-value">{{ quotation.status }}</span>
+</div>
