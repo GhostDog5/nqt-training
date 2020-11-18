@@ -1,0 +1,27 @@
+$height: 48px;
+$border: 2px;
+
+:host {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  div {
+    border-radius: 50%;
+    align-content: center;
+  }
+
+.outerCircle {
+    height: $height;
+    width: $height;
+    border: $border solid #3BB0BB;
+  }
+  
+  .innerCircle {
+    margin: 0;
+    height: calc(#{$height} - 2*2*#{$border});
+    width: calc(#{$height} - 2*2*#{$border});
+    border: #{$border} solid #3BB0BB;
+    color: white;
+    background-color: #3BB0BB;
+  }
