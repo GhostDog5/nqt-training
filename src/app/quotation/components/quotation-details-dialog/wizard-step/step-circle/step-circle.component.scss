@@ -6,18 +6,18 @@ $color: #3BB0BB;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     border-radius: 50%;
   }
-  .circle {
+  .outer-circle {
     height: $height;
     width: $height;
     border: $border solid $color;
   }
 
-  .innerCircle {
+  .inner-circle {
     height: calc(#{$height} - 2*2*#{$border});
     width: calc(#{$height} - 2*2*#{$border});
     background-color: $color;
+    color: white;
   }
   

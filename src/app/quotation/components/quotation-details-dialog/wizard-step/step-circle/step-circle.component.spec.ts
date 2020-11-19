@@ -3,23 +3,60 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StepCircleComponent } from './step-circle.component';
 
 describe('StepCircleComponent', () => {
-  let component: StepCircleComponent;
-  let fixture: ComponentFixture<StepCircleComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ StepCircleComponent ]
-    })
-    .compileComponents();
+  describe('(class tests)', () => {
+    let component;
+
+    beforeEach(() => {
+      component = new StepCircleComponent();
+    });
+
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
+
+    it('should change label', () => {
+      //given
+      const label = '1';
+
+      //when
+      component.label = label;
+
+      //then
+      expect(component.label).toEqual(label);
+    });
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(StepCircleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  describe('(DOM tests)', () => {
+    let component: StepCircleComponent;
+    let fixture: ComponentFixture<StepCircleComponent>;
+    let element: HTMLElement;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    beforeEach(async () => {
+      await TestBed.configureTestingModule({
+        declarations: [ StepCircleComponent ]
+      })
+      .compileComponents();
+    });
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(StepCircleComponent);
+      component = fixture.componentInstance;
+      element = fixture.nativeElement as HTMLDivElement;
+    });
+
+    it('populates new input values to DOM', () => {
+      //given
+      const label = '1';
+      component.label = label;
+      fixture.detectChanges();
+
+      //when
+      const inputElement = element.querySelector<HTMLDivElement>('#circle-label');
+
+      //then
+      expect(inputElement.innerText).toEqual(label);
+    });
+
+  })
 });
