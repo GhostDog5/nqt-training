@@ -16,13 +16,13 @@ describe('StepCircleComponent', () => {
     });
 
     it('should change label', () => {
-      //given
+      // given
       const label = '1';
 
-      //when
+      // when
       component.label = label;
 
-      //then
+      // then
       expect(component.label).toEqual(label);
     });
   });
@@ -46,15 +46,15 @@ describe('StepCircleComponent', () => {
     });
 
     it('populates new input values to DOM', () => {
-      //given
+      // given
       const label = '1';
       component.label = label;
       fixture.detectChanges();
 
-      //when
+      // when
       const inputElement = element.querySelector<HTMLDivElement>('#circle-label');
 
-      //then
+      // then
       expect(inputElement.innerText).toEqual(label);
     });
 
