@@ -1,9 +1,14 @@
-  <div class="stepper">
+  <section class="stepper">
     <nqt-step-circle [label]="step.label"></nqt-step-circle>
     <div class="line"></div>
-  </div>
-  <div class="main">
-    <header>{{step.title}}</header>
-    <ng-content *ngIf="active"></ng-content>
-    <ng-content *ngIf="!active" select="[overview]"></ng-content>
-  </div>
+  </section>
+  <section class="main">
+    <header>
+      <div class="label">Step {{step.label}}</div>
+      <div class="title">{{step.title | titlecase}}</div>
+    </header>
+    <section class="content">
+      <ng-content *ngIf="active"></ng-content>
+      <ng-content *ngIf="!active" select="[overview]"></ng-content>
+    </section>
+  </section>
