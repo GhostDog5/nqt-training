@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RadioButtonsComponent } from './forms/radio-buttons/radio-buttons.component';
 import { CounterInputComponent } from './forms/counter-input/counter-input.component';
 import { AppHeaderComponent } from './dialogs/app-header/app-header.component';
-import { InformationFilledModule, PlaneModule } from '@carbon/icons-angular';
+import { AlarmAddModule, AppleModule, InformationFilledModule, PlaneModule } from '@carbon/icons-angular';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,10 @@ import { InformationFilledModule, PlaneModule } from '@carbon/icons-angular';
     RadioButtonsComponent,
     CounterInputComponent,
     AppHeaderComponent,
+    AlarmAddModule,
+    AppleModule,
     PlaneModule,
-    InformationFilledModule,
+    InformationFilledModule
   ],
 })
 export class SharedModule {
