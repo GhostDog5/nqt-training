@@ -1,5 +1,6 @@
 <div class="outer-circle">
     <div class="inner-circle">
         <p id="circle-label" *ngIf="label">{{label}}</p>
+        <ng-content slect="svg" *ngIf="!label"></ng-content>
     </div>
 </div>

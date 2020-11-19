@@ -7,11 +7,19 @@ import { WizardStepComponent } from './components/quotation-details-dialog/wizar
 import { CustomerDataComponent } from './components/quotation-details-dialog/steps/customer-data/customer-data.component';
 import { CustomerDataOverviewComponent } from './components/quotation-details-dialog/steps/customer-data-overview/customer-data-overview.component';
 import { StepCircleComponent } from './components/quotation-details-dialog/wizard-step/step-circle/step-circle.component';
-
+import { CheckmarkModule } from '@carbon/icons-angular';
 @NgModule({
-  declarations: [QuotationDetailsDialogComponent, QuotationDetailsDialogHeaderComponent, QuotationGeneralInfoComponent, WizardStepComponent, CustomerDataComponent, CustomerDataOverviewComponent, StepCircleComponent],
+  declarations: [QuotationDetailsDialogComponent,
+     QuotationDetailsDialogHeaderComponent, 
+     QuotationGeneralInfoComponent, 
+     WizardStepComponent,
+     CustomerDataComponent, 
+     CustomerDataOverviewComponent, 
+     StepCircleComponent
+    ],
   imports: [
-    SharedModule
+    SharedModule,
+    CheckmarkModule
   ]
 })
 export class QuotationModule {
