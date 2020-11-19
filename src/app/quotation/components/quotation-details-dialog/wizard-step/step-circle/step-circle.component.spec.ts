@@ -42,7 +42,7 @@ describe('StepCircleComponent', () => {
     beforeEach(() => {
       fixture = TestBed.createComponent(StepCircleComponent);
       component = fixture.componentInstance;
-      element = fixture.nativeElement as HTMLDivElement;
+      element = fixture.nativeElement as HTMLElement;
     });
 
     it('populates new input values to DOM', () => {
