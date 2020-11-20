@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { QuotationService } from 'src/app/quotation/services/quotation.service';
 
 import { QuotationDetailsDialogHeaderComponent } from './quotation-details-dialog-header.component';
 
@@ -54,7 +53,7 @@ describe('QuotationDetailsDialogHeaderComponent', () => {
     it('notifies on Save Quotation', () => {
       // given: save button
       fixture.detectChanges();
-      const saveQuotationButton = element.querySelector<HTMLInputElement>('[saveQuotationButton]');
+      const saveQuotationButton = element.querySelector<HTMLInputElement>('.saveQuotationButton');
 
       component.saveClick.subscribe(saveClicked => {
         // then:
@@ -68,7 +67,7 @@ describe('QuotationDetailsDialogHeaderComponent', () => {
     it('notifies on Back to Dashbord', () => {
       // given: Back to Dashbord button
       fixture.detectChanges();
-      const backToDashboardButton = element.querySelector<HTMLInputElement>('[backToDashboardButton]');
+      const backToDashboardButton = element.querySelector<HTMLInputElement>('.backToDashboardButton');
 
       component.backToDashboardClick.subscribe(backToDashboardClicked => {
         // then:
