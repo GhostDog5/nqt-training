@@ -1,0 +1,23 @@
+$height: 48px;
+$border: 2px;
+$color: #3BB0BB;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .outer-circle {
+    height: $height;
+    width: $height;
+    border: $border solid $color;
+  }
+
+  .inner-circle {
+    height: calc(#{$height} - 2*2*#{$border});
+    width: calc(#{$height} - 2*2*#{$border});
+    background-color: $color;
+    color: white;
+  }
+  

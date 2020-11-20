@@ -1,4 +1,49 @@
+$height: 48px;
+$border: 2px;
+$color: #3bb0bb;
+
 :host {
   display: flex;
   flex-direction: row;
+  min-height: $height;
+}
+.stepper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  .line {
+    height: 100%;
+    width: $border;
+    background-color: $color;
+  }
+}
+
+.main {
+  margin-left: 31px;
+  .label {
+    height: 20px;
+    width: 53px;
+    color: #848fae;
+    font-family: Arial;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+  }
+
+  .title {
+    height: 40px;
+    width: 211px;
+    color: #50566a;
+    font-family: "Source Sans Pro";
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 40px;
+  }
+
+  .content {
+    margin-top: 33px;
+    margin-bottom: 50.4px;
+  }
 }

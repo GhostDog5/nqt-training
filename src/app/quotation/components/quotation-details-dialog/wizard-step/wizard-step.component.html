@@ -1,6 +1,16 @@
-<section class="step">{{step.label}}</section>
-<section class="main">
-  <header>{{step.title}}</header>
-  <ng-content *ngIf="active"></ng-content>
-  <ng-content *ngIf="!active" select="[overview]"></ng-content>
-</section>
+  <section class="stepper">
+    <nqt-step-circle [label]="step.label">
+      <svg ibmIconCheckmark size="16"></svg>
+    </nqt-step-circle>
+    <div class="line"></div>
+  </section>
+  <section class="main">
+    <header>
+      <div class="label">Step {{step.label}}</div>
+      <div class="title">{{step.title | titlecase}}</div>
+    </header>
+    <section class="content">
+      <ng-content *ngIf="active"></ng-content>
+      <ng-content *ngIf="!active" select="[overview]"></ng-content>
+    </section>
+  </section>
