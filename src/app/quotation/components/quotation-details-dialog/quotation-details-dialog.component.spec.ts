@@ -18,8 +18,15 @@ describe('QuotationDetailsDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('(class tests)', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
+
+    it('should change property: active to be true', () => {
+      component.toggle();
+      expect(component.active).toBeTruthy();
+    })
   });
 
 });

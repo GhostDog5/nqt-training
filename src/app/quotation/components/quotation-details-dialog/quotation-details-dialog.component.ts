@@ -25,7 +25,17 @@ export class QuotationDetailsDialogComponent {
     this.quotation = {
       creationDate: new Date(),
       status: 'in progress',
-      transportMode: 'air'
+      transportMode: 'air',
+      customer: {
+        name: 'KTM ebike',
+        industry: 'Industry - ebike producer',
+        adress: {
+          city: 'Munchen Nord',
+          street: 'Ingolstadter Str. 43',
+          phoneNumber: '+49 567 578 394',
+          email: 'ktm_ebike@ebike.com'
+        }
+      }
     };
   }
 
