@@ -1,20 +1,12 @@
 import {OrderSearchComponent} from './order-search.component';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {ReactiveFormsModule} from '@angular/forms';
-import {OrderService} from '../../../services/order.service';
-
 
 describe('OrderSearchComponent', () => {
-  let orderServiceMock;
-
-  beforeEach(() => {
-    orderServiceMock = jasmine.createSpyObj(['getOne', 'search']);
-  });
-
   describe('(class tests)', () => {
     it('populates input value to the form', () => {
       // given
-      const component = new OrderSearchComponent(orderServiceMock);
+      const component = new OrderSearchComponent();
       // when
       component.criteria = {businessKey: 'TestBK'};
       // then
@@ -23,7 +15,7 @@ describe('OrderSearchComponent', () => {
 
     it('notifies on criteria change', () => {
       // given
-      const component = new OrderSearchComponent(orderServiceMock);
+      const component = new OrderSearchComponent();
       component.criteria = {businessKey: 'TestBK'};
       component.criteriaChange.subscribe(updatedCriteria => {
         // then
@@ -43,7 +35,6 @@ describe('OrderSearchComponent', () => {
       return TestBed.configureTestingModule({
         imports: [ReactiveFormsModule],
         declarations: [OrderSearchComponent],
-        providers: [{provide: OrderService, useValue: orderServiceMock}]
       }).compileComponents();
     });
 
@@ -75,7 +66,6 @@ describe('OrderSearchComponent', () => {
       component.criteriaChange.subscribe(updatedCriteria => {
         // then
         expect(updatedCriteria.businessKey).toBe('NewBK');
-        expect(orderServiceMock.getOne).toHaveBeenCalled();
       });
       // when
       const submitButton = element.querySelector<HTMLInputElement>('button');
