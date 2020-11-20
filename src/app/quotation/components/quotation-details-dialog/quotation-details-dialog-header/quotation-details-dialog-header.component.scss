@@ -14,7 +14,7 @@ section {
   height: 2.75rem;
 }
 
-.saveQuotationButton {
+.saveQuotation {
   background-color: $nqt-db-teal;
   color: white;
   font-family: $nqt-font-family-headers;
@@ -30,10 +30,15 @@ nav {
   align-items: center;
 }
 
-.backToDashboardButton {
+svg {
+  margin-right: 0.75rem;
+}
+
+.backToDashboard {
   background-color: $nqt-grey-10;
   color: $nqt-grey-90;
   border: none;
   margin-top: 0.5rem;
   margin-bottom: 0.625rem;
+  text-decoration: none;
 }

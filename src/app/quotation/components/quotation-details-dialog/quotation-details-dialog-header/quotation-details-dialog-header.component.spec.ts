@@ -53,7 +53,7 @@ describe('QuotationDetailsDialogHeaderComponent', () => {
     it('notifies on Save Quotation', () => {
       // given: save button
       fixture.detectChanges();
-      const saveQuotationButton = element.querySelector<HTMLInputElement>('.saveQuotationButton');
+      const saveQuotationButton = element.querySelector<HTMLInputElement>('.saveQuotation');
 
       component.saveClick.subscribe(saveClicked => {
         // then:
@@ -67,7 +67,7 @@ describe('QuotationDetailsDialogHeaderComponent', () => {
     it('notifies on Back to Dashbord', () => {
       // given: Back to Dashbord button
       fixture.detectChanges();
-      const backToDashboardButton = element.querySelector<HTMLInputElement>('.backToDashboardButton');
+      const backToDashboardButton = element.querySelector<HTMLInputElement>('.backToDashboard');
 
       component.backToDashboardClick.subscribe(backToDashboardClicked => {
         // then:
