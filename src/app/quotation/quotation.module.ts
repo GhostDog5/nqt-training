@@ -1,5 +1,5 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {SharedModule} from '../shared/shared.module';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
 import { QuotationDetailsDialogComponent } from './components/quotation-details-dialog/quotation-details-dialog.component';
 import { QuotationDetailsDialogHeaderComponent } from './components/quotation-details-dialog/quotation-details-dialog-header/quotation-details-dialog-header.component';
 import { QuotationGeneralInfoComponent } from './components/quotation-details-dialog/quotation-general-info/quotation-general-info.component';
@@ -26,7 +26,7 @@ export class QuotationModule {
   static forRoot(): ModuleWithProviders<QuotationModule> {
     return {
       ngModule: QuotationModule,
-      providers: []
+      providers: [],
     };
   }
 }
