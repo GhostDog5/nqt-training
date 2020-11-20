@@ -1,6 +1,5 @@
-$ribbonBackgroundColor: #EAECF6;
-$navButtonTextColor: #424757;
-$saveButtonBackgroudColor: #1C7D86;
+@import "variables";
+
 $ribbonShadowColor: rgba(37,44,67,0.12);
 
 :host {
@@ -12,15 +11,15 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 2.75rem;
 }
 
-[saveQuotationButton] {
-  background-color: $saveButtonBackgroudColor;
+.saveQuotationButton {
+  background-color: $nqt-db-teal;
   color: white;
-  font-family: sans-serif; //should be: Source Sans Pro Bold by Google
-  padding: 0.625rem;
-  height: 2.75rem;
-  width: 11.875rem;
+  font-family: $nqt-font-family-headers;
+  border: none;
+  padding: 0 2.5rem;
   margin-right: 4rem;
 }
 
@@ -29,18 +28,16 @@ section {
 }
 
 nav {
-  background-color: $ribbonBackgroundColor;
+  background-color: $nqt-grey-10;
   height: 2.125rem;
   display: flex;
   align-content: center;
 }
 
-nav button {
-  background-color: $ribbonBackgroundColor;
-  color: $navButtonTextColor;
+.backToDashboardButton {
+  background-color: $nqt-grey-10;
+  color: $nqt-grey-90;
   border: none;
-  font-family: Arial, Helvetica, sans-serif;
-  size: 1rem;
   margin-top: 0.5rem;
   margin-bottom: 0.625rem;
 }
