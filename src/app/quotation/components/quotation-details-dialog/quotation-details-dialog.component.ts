@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import { Observable } from 'rxjs';
 import {Quotation} from '../../model';
-import { QuotationService } from '../../services/quotation.service';
 
 export interface Step {
   label: string;
@@ -22,7 +21,7 @@ export class QuotationDetailsDialogComponent {
     this.active = !this.active;
   }
 
-  constructor(private readonly quotationService: QuotationService) {
+  constructor() {
     this.quotation = {
       creationDate: new Date(),
       status: 'in progress',
@@ -31,14 +30,7 @@ export class QuotationDetailsDialogComponent {
   }
 
   saveQuotation(): void {
-    if (this.quotation.id) {
-      console.log('Save Quotation logic is executed');
-      this.quotationService.saveQuotation(+this.quotation.id);
-    }
-    else {
-      console.log('Create Quotation logic is executed');
-      this.quotationService.createQuotation();
-    }
+    console.log('Quotation saved.');
   }
 
 }
