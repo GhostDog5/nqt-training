@@ -1,12 +1,12 @@
 @import "variables";
-
-$ribbonShadowColor: rgba(37,44,67,0.12);
+@import "mixins";
 
 :host {
   display: block;
 }
 
 section {
+  @include Gray-10;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -21,10 +21,6 @@ section {
   border: none;
   padding: 0 2.5rem;
   margin-right: 4rem;
-}
-
-.ribbonShadow {
-  box-shadow: 0 1px 2px 0 $ribbonShadowColor;
 }
 
 nav {
